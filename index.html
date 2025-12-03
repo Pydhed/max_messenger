@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Max">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json,%7B%22name%22:%22Max%20Messenger%22,%22short_name%22:%22Max%22,%22icons%22:%5B%7B%22src%22:%22https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/ff376b14-d887-4184-bcbf-4f1da632c19d%22,%22sizes%22:%22512x512%22,%22type%22:%22image/jpeg%22,%22purpose%22:%22any%20maskable%22%7D%5D,%22start_url%22:%22/%22,%22scope%22:%22/%22,%22display%22:%22standalone%22,%22orientation%22:%22portrait%22,%22background_color%22:%22%23ffffff%22,%22theme_color%22:%235b9eff%22%7D">
+    <link rel="apple-touch-icon" href="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/ff376b14-d887-4184-bcbf-4f1da632c19d">
+    
+    <title>Max</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+            color: #000;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            padding-top: max(20px, env(safe-area-inset-top));
+            padding-bottom: max(20px, env(safe-area-inset-bottom));
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .icon-wrapper {
+            margin-bottom: 32px;
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            background-image: url('https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/ff376b14-d887-4184-bcbf-4f1da632c19d');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .icon-circle {
+            display: none;
+        }
+
+        .icon-inner {
+            display: none;
+        }
+
+        .icon-inner::after {
+            display: none;
+        }
+
+        .message {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #000;
+            letter-spacing: -0.5px;
+        }
+
+        .sub-text {
+            font-size: 14px;
+            color: #888;
+            margin-top: 12px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 375px) {
+            .icon-wrapper {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 24px;
+            }
+
+            .icon {
+                width: 54px;
+                height: 54px;
+            }
+
+            .icon-inner {
+                width: 42px;
+                height: 42px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+        }
+
+        /* Prevent zoom on input focus on iOS */
+        input, textarea, select {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-wrapper">
+            <div class="icon">
+                <div class="icon-circle">
+                    <div class="icon-inner"></div>
+                </div>
+            </div>
+        </div>
+        <p class="message">Данное приложение не поддерживается вашей моделью телефона, или операционной системой</p>
+    </div>
+</body>
+</html>
